@@ -10,4 +10,10 @@ Types::QueryType = GraphQL::ObjectType.define do
       "Hello World!"
     }
   end
+
+  field :post, !Types::PostType do
+    resolve ->(obj, args, ctx){
+      ctx[:post]
+    }
+  end
 end
